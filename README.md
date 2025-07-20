@@ -1,87 +1,127 @@
-# Welcome to React Router!
+# AI Captions Webapp
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A full-stack web application that automatically generates captions for video content using AI technology, built with React, TypeScript, and ElevenLabs API.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## 🚀 Features
 
-## Features
+- **Video Upload and Processing**
+  - Drag-and-drop interface for video uploads
+  - Support for MP4 video files
+  - Real-time upload progress tracking
+  - Server-side video processing
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+- **AI Transcription**
+  - Automated caption generation using ElevenLabs API
+  - Support for SRT caption format
+  - Speaker diarization for multiple voices
+  - Cloud storage integration
 
-## Getting Started
+- **Authentication & Security**
+  - Secure user authentication system
+  - Protected video processing routes
+  - Secure file handling
 
-### Installation
+- **Cloud Infrastructure**
+  - Cloudflare R2 storage integration
+  - Presigned URLs for secure file uploads
+  - Scalable video processing
 
-Install the dependencies:
+## 🛠️ Tech Stack
 
+- **Frontend**
+  - React with TypeScript
+  - React Router for navigation
+  - TailwindCSS for styling
+  - Custom UI components
+
+- **Backend**
+  - React-Router v7 
+  - AWS SDK for S3/R2 integration
+  - ElevenLabs API integration
+
+- **Storage**
+  - Cloudflare R2 (S3-compatible storage)
+  - Secure file management
+
+## 📦 Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/E-Rick-M/ai-captions-webapp.git
+```
+
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-### Development
+3. Configure environment variables:
+```env
+R2_ACCOUNT_ID=your_account_id
+R2_ACCESS_KEY_ID=your_access_key
+R2_SECRET_ACCESS_KEY=your_secret_key
+ELEVEN_LABS=your_eleven_labs_api_key
+BETTER_AUTH_SECRET=your_better_auth_secret
+BETTER_AUTH_URL=your_better_auth_Url
+DB_FILE_NAME=your_local_database_name
+```
 
-Start the development server with HMR:
-
+4. Start the development server:
 ```bash
 npm run dev
 ```
 
-Your application will be available at `http://localhost:5173`.
+## 🚀 Usage
 
-## Building for Production
+1. **Authentication**
+   - Create an account or log in
+   - Secure session management
 
-Create a production build:
+2. **Video Upload**
+   - Drag and drop MP4 files
+   - Monitor upload progress
+   - View processing status
 
-```bash
-npm run build
-```
+3. **Transcription**
+   - Automatic caption generation
+   - Download captions in SRT format
+   - Review and edit transcriptions
 
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+## 🏗️ Project Structure
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+app/
+├── components/         # Reusable UI components
+├── routes/            # Application routes
+│   ├── api/          # API endpoints
+│   │   ├── presign.ts    # S3 presigned URLs
+│   │   └── transcribe.ts # Transcription endpoint
+│   ├── auth.tsx      # Authentication routes
+│   └── video.tsx     # Video upload interface
+└── lib/              # Utility functions
 ```
 
-## Styling
+## 🔒 Security
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+- Secure file uploads using presigned URLs
+- Protected API endpoints
+- Environment variable protection
+- Secure user authentication
 
----
 
-Built with ❤️ using React Router.
+## 📝 License
+
+MIT License - see LICENSE file for details
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+
+
+
+
