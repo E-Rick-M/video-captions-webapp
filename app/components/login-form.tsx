@@ -35,6 +35,7 @@ export function LoginForm({
         <CardContent>
           <Form method="post">
             <div className="flex flex-col gap-6">
+              <Input type="hidden" name="mode" value={mode}></Input>
               <div className="grid gap-3">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -55,7 +56,7 @@ export function LoginForm({
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required name="password" />
+                <Input id="password" type="password" required name="password"/>
               </div>
               <div className="flex flex-col gap-3">
                 {mode === 'login' ? <Button type="submit" className="w-full">
